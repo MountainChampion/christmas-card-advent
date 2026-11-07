@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christmas Card Exchange</title>
+    <meta name="theme-color" content="#102b40" />
+    <title>Weihnachtswunderland – ein interaktives Adventsdorf</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet" />
@@ -12,74 +13,114 @@
   <body>
     <div class="page-shell">
       <header class="topbar">
-        <div class="brand-wrap">
-          <div class="mini-badge">✦</div>
-          <div>
-            <p class="eyebrow">Adventskalender</p>
-            <h1>Christmas Card Wonderland</h1>
-          </div>
+        <a class="brand-wrap" href="#start" aria-label="Zum Anfang">
+          <span class="mini-badge" aria-hidden="true">✦</span>
+          <span>
+            <span class="eyebrow">Ein kleines Stück Weihnachtszauber</span>
+            <h1>Weihnachts<wbr />wunderland</h1>
+          </span>
+        </a>
+        <div class="top-actions">
+          <button id="musicButton" class="quiet-button" type="button" aria-pressed="false">♫ Musik aus</button>
+          <button id="newCardButton" class="primary-button" type="button">💌 Karte gestalten</button>
         </div>
-        <button id="newCardButton" class="primary-button">Karte schreiben</button>
       </header>
 
-      <main class="scene-wrap">
-        <div class="snow-glow"></div>
-        <div class="snow-sparkles"></div>
-        <div id="scene" class="scene" aria-label="Weihnachtslandschaft"></div>
+      <main id="start">
+        <section class="intro" aria-labelledby="introTitle">
+          <p class="eyebrow">Willkommen im Dorf</p>
+          <h2 id="introTitle">Hier wartet überall ein kleines Wunder.</h2>
+          <p>Leuchte den Baum an, öffne Geschenke und entdecke die Geheimnisse des verschneiten Dorfes.</p>
+        </section>
+
+        <section class="scene-wrap" aria-label="Interaktives Weihnachtsdorf">
+          <div id="scene" class="scene">
+            <div class="night-sky" aria-hidden="true"></div>
+            <div class="moon" aria-hidden="true">☾</div>
+            <div class="aurora" aria-hidden="true"></div>
+            <div class="mountains" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="snow-ground" aria-hidden="true"></div>
+
+            <button class="sleigh" id="sleighButton" type="button" aria-label="Schlitten am Himmel entdecken">🛷</button>
+
+            <div class="village-house house-left">
+              <button class="house-button" type="button" data-story="In der kleinen Bäckerei duftet es nach Zimt, Vanille und frisch gebackenen Plätzchen. Die Bäckerin hebt für dich ein warmes Sternchen auf." aria-label="Geschichte aus der Bäckerei lesen">
+                <span class="house-roof"></span><span class="house-body"><i class="window">✦</i><i class="window">✦</i><i class="door-knob"></i></span>
+                <span class="house-sign">Plätzchen-Bäckerei</span>
+              </button>
+            </div>
+            <div class="village-house house-right">
+              <button class="house-button" type="button" data-story="Im Postamt werden die letzten Weihnachtsbriefe sortiert. Ein kleiner Wichtel entdeckt einen Brief, auf dem dein Name steht!" aria-label="Geschichte aus dem Postamt lesen">
+                <span class="house-roof"></span><span class="house-body"><i class="window">♥</i><i class="window">♥</i><i class="door-knob"></i></span>
+                <span class="house-sign">Weihnachtspost</span>
+              </button>
+            </div>
+
+            <div class="tree-area">
+              <button id="treeButton" class="christmas-tree" type="button" aria-label="Weihnachtsbaum zum Leuchten bringen">
+                <span class="tree-star">★</span><span class="tree-layer layer-one"></span><span class="tree-layer layer-two"></span><span class="tree-layer layer-three"></span><span class="tree-trunk"></span>
+              </button>
+              <button class="ornament ornament-one" type="button" aria-label="Rote Weihnachtskugel anzünden"></button>
+              <button class="ornament ornament-two" type="button" aria-label="Goldene Weihnachtskugel anzünden"></button>
+              <button class="ornament ornament-three" type="button" aria-label="Blaue Weihnachtskugel anzünden"></button>
+              <button class="ornament ornament-four" type="button" aria-label="Rosa Weihnachtskugel anzünden"></button>
+              <span class="tree-caption">Der Wunschbaum</span>
+            </div>
+
+            <button class="snowman snowman-one" type="button" aria-label="Schneemann eins entdecken">☃️</button>
+            <button class="snowman snowman-two" type="button" aria-label="Schneemann zwei entdecken">☃️</button>
+            <button class="snowman snowman-three" type="button" aria-label="Schneemann drei entdecken">☃️</button>
+
+            <div class="market-stall">
+              <button id="marketButton" type="button" aria-label="Überraschung am Weihnachtsmarkt entdecken"><span class="stall-roof">WEIHNACHTSMARKT</span><span class="stall-counter">☕　🍪　✨</span></button>
+            </div>
+
+            <button class="gift gift-red" type="button" data-surprise="Ein Wunschstern für dich! ✨" aria-label="Rotes Geschenk öffnen">🎁</button>
+            <button class="gift gift-blue" type="button" data-surprise="Ein warmer Kakao und ein gemütlicher Abend warten auf dich. ☕" aria-label="Blaues Geschenk öffnen">🎁</button>
+            <button class="gift gift-gold" type="button" data-surprise="Dein Geschenk: ein Stern für deine Sammlung!" aria-label="Goldenes Geschenk öffnen">🎁</button>
+
+            <button id="santaButton" class="santa hidden" type="button" aria-label="Weihnachtsmann anklicken">🎅</button>
+            <div id="snowLayer" class="snow-layer" aria-hidden="true"></div>
+            <div id="sparkleLayer" class="sparkle-layer" aria-hidden="true"></div>
+            <div class="scene-label">Klick dich durch das Dorf <span aria-hidden="true">↓</span></div>
+          </div>
+        </section>
+
+        <section class="activity-bar" aria-label="Spiele und Effekte">
+          <div class="activity-copy"><strong>Dein Dorf-Abenteuer</strong><span id="gameStatus" aria-live="polite">Sammle Sterne und finde alle Geheimnisse.</span></div>
+          <div class="activity-actions">
+            <button id="huntButton" class="secondary-button" type="button">🔎 Weihnachtsmann suchen</button>
+            <button id="countButton" class="secondary-button" type="button">☃️ Schneemänner zählen</button>
+            <button id="giftHuntButton" class="secondary-button" type="button">🎁 Blaues Geschenk finden</button>
+            <button id="snowButton" class="secondary-button" type="button" aria-pressed="true">❄️ Schnee an</button>
+            <span class="star-counter" aria-live="polite">⭐ <strong id="starCount">0</strong></span>
+          </div>
+        </section>
+
+        <section class="calendar-section" aria-labelledby="calendarTitle">
+          <div class="section-heading">
+            <div><p class="eyebrow">Jeden Tag eine Nachricht</p><h2 id="calendarTitle">Dein Karten-Adventskalender</h2></div>
+            <span class="calendar-note">Wähle ein Türchen und lies deine Weihnachtskarte.</span>
+          </div>
+          <div id="doorGrid" class="door-grid" aria-label="Adventskalender mit 24 Karten"></div>
+        </section>
       </main>
 
-      <aside id="composerPanel" class="composer-panel hidden" aria-live="polite">
-        <div class="panel-header">
-          <h2>Weihnachtskarte schreiben</h2>
-          <button id="closePanelButton" class="icon-button" aria-label="Schließen">✕</button>
-        </div>
-
+      <aside id="composerPanel" class="composer-panel hidden" aria-live="polite" aria-labelledby="composerTitle">
+        <div class="panel-header"><div><p class="eyebrow">Von Herzen gestaltet</p><h2 id="composerTitle">Deine Weihnachtskarte</h2></div><button id="closePanelButton" class="icon-button" type="button" aria-label="Schließen">✕</button></div>
         <form id="cardForm">
-          <label>
-            Absender
-            <input id="senderName" type="text" maxlength="20" placeholder="Dein Name" autocomplete="name" required />
-          </label>
-
-          <label>
-            Empfänger
-            <input id="recipientName" type="text" maxlength="20" placeholder="An wen geht die Karte?" required />
-          </label>
-
-          <label>
-            Deine Nachricht
-            <textarea id="cardMessage" rows="4" maxlength="120" placeholder="Schreibe hier deine Weihnachtsgrüße …" required></textarea>
-          </label>
-
-          <label>
-            Kartenfarbe auswählen
-            <div class="color-picker" id="colorPicker">
-              <button type="button" class="color-swatch active" data-color="#ff5f6d" style="background:#ff5f6d" aria-label="Rot"></button>
-              <button type="button" class="color-swatch" data-color="#22c1c3" style="background:#22c1c3" aria-label="Türkis"></button>
-              <button type="button" class="color-swatch" data-color="#ffd166" style="background:#ffd166" aria-label="Gelb"></button>
-              <button type="button" class="color-swatch" data-color="#9b5de5" style="background:#9b5de5" aria-label="Lila"></button>
-              <button type="button" class="color-swatch" data-color="#5ec576" style="background:#5ec576" aria-label="Grün"></button>
-            </div>
-          </label>
-
-          <button type="submit" class="submit-button">Karte verschicken</button>
+          <label>Dein Name<input id="senderName" type="text" maxlength="20" placeholder="Dein Name" autocomplete="name" required /></label>
+          <label>Für wen ist die Karte?<input id="recipientName" type="text" maxlength="20" placeholder="Name" required /></label>
+          <label>Weihnachtsgruß auswählen<select id="greetingSelect"><option value="">Eigenen Gruß schreiben</option><option value="Ich wünsche dir zauberhafte Weihnachten voller Wärme, Lachen und schöner Überraschungen!">Zauberhafte Weihnachten</option><option value="Möge dein Zuhause von Liebe, Licht und dem Duft frisch gebackener Plätzchen erfüllt sein.">Liebe &amp; Licht</option><option value="Für dich: ganz viel Sternenglanz, gemütliche Momente und einen wundervollen Start ins neue Jahr!">Sternenglanz</option></select></label>
+          <label>Deine Nachricht<textarea id="cardMessage" rows="3" maxlength="120" placeholder="Schreibe hier deine Weihnachtsgrüße …" required></textarea></label>
+          <label>Kartenfarbe auswählen<span class="color-picker" id="colorPicker"><button type="button" class="color-swatch active" data-color="#ef6671" style="background:#ef6671" aria-label="Rot"></button><button type="button" class="color-swatch" data-color="#31aeb2" style="background:#31aeb2" aria-label="Türkis"></button><button type="button" class="color-swatch" data-color="#e9ad42" style="background:#e9ad42" aria-label="Gold"></button><button type="button" class="color-swatch" data-color="#9670c8" style="background:#9670c8" aria-label="Lila"></button><button type="button" class="color-swatch" data-color="#5cae78" style="background:#5cae78" aria-label="Grün"></button></span></label>
+          <button type="submit" class="submit-button">Karte verschicken ✨</button>
         </form>
       </aside>
     </div>
 
-    <div id="cardModal" class="card-modal hidden" aria-modal="true" role="dialog">
-      <div class="modal-card">
-        <button id="closeModalButton" class="modal-close" aria-label="Schließen">✕</button>
-        <div class="modal-top">
-          <span class="card-tag">Für dich</span>
-          <span id="modalDay" class="card-day">Tag 01</span>
-        </div>
-        <h3 id="modalTitle">Für dich</h3>
-        <p id="modalMessage"></p>
-        <div class="signature-row">
-          <span>Liebe Grüße von</span>
-          <strong id="modalSender"></strong>
-        </div>
-      </div>
+    <div id="cardModal" class="card-modal hidden" aria-modal="true" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalMessage">
+      <article class="modal-card"><button id="closeModalButton" class="modal-close" type="button" aria-label="Schließen">✕</button><div class="modal-top"><span class="card-tag">Ein Gruß für dich</span><span id="modalDay" class="card-day">Tag 01</span></div><h2 id="modalTitle">Frohe Weihnachten!</h2><p id="modalMessage"></p><div class="signature-row"><span>Liebe Grüße von</span><strong id="modalSender"></strong></div></article>
     </div>
 
     <script src="app.js"></script>

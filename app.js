@@ -1,187 +1,288 @@
 const defaultCards = [
-  { day: 1, title: 'Cozy Morning', message: 'Warm cocoa, soft blankets, and a day full of little wonders.', sender: 'Mila', accent: '#ff7f7f' },
-  { day: 2, title: 'Snow Day', message: 'Let the snowflakes remind you that magic can happen in quiet moments.', sender: 'Noah', accent: '#56cfe1' },
-  { day: 3, title: 'Sweet Wishes', message: 'May your days sparkle with kindness, laughter, and love.', sender: 'Lina', accent: '#ffca3a' },
-  { day: 4, title: 'Holiday Glow', message: 'A candlelit evening, a warm heart, and a merry Christmas to you.', sender: 'Eli', accent: '#9b5de5' },
-  { day: 5, title: 'Festive Joy', message: 'May every smile you share today come back to you multiplied.', sender: 'Clara', accent: '#7bd389' },
-  { day: 6, title: 'Cheerful Notes', message: 'May the music of the season fill your home with happiness.', sender: 'Theo', accent: '#ff9f1c' },
-  { day: 7, title: 'Winter Hugs', message: 'Sending warm hugs and a pocket full of cozy memories.', sender: 'Lucy', accent: '#74c69d' },
-  { day: 8, title: 'Peppermint Magic', message: 'Hope your Christmas is as sweet as candy cane dreams.', sender: 'Zoe', accent: '#ff6b6b' },
-  { day: 9, title: 'Twinkle Time', message: 'May the lights around you remind you how loved you are.', sender: 'Owen', accent: '#4ecdc4' },
-  { day: 10, title: 'Family Joy', message: 'Every gathering feels brighter with you in it.', sender: 'Ava', accent: '#b5179e' },
-  { day: 11, title: 'Holiday Wonder', message: 'Let your Christmas sparkle like the stars above the snow.', sender: 'Leo', accent: '#ffb703' },
-  { day: 12, title: 'Merry Moments', message: 'A little laughter, a lot of love, and endless festive cheer.', sender: 'Sofia', accent: '#8ecae6' },
-  { day: 13, title: 'Warm Wishes', message: 'May every corner of your day glow with peace and gratitude.', sender: 'Isaac', accent: '#5ec576' },
-  { day: 14, title: 'Golden Dreams', message: 'Here is to sunsets, jolly nights, and beautiful memories.', sender: 'Nora', accent: '#ffd166' },
-  { day: 15, title: 'Joyful Togetherness', message: 'Thanks for being part of my favorite holiday memories.', sender: 'Kai', accent: '#ff8fab' },
-  { day: 16, title: 'Christmas Blessings', message: 'May your home be full of light, laughter, and peace.', sender: 'Emma', accent: '#7cc6fe' },
-  { day: 17, title: 'Magic Hour', message: 'The best gift is the warmth of being remembered with love.', sender: 'Finn', accent: '#ff9f43' },
-  { day: 18, title: 'Snowy Smiles', message: 'Wishing you a season wrapped in comfort and joy.', sender: 'Ruby', accent: '#52b69a' },
-  { day: 19, title: 'Festive Calm', message: 'May your heart feel quiet, cozy, and completely at peace.', sender: 'Hugo', accent: '#7b2cbf' },
-  { day: 20, title: 'Holiday Spark', message: 'Your kindness is the brightest light in every room.', sender: 'Ivy', accent: '#f72585' },
-  { day: 21, title: 'Candy Cane Cheer', message: 'May your Christmas be sweet, bright, and beautifully memorable.', sender: 'Mason', accent: '#ef476f' },
-  { day: 22, title: 'Storybook Christmas', message: 'Here’s to all the little magical moments this season brings.', sender: 'Luna', accent: '#00bbf9' },
-  { day: 23, title: 'Endless Delight', message: 'May love, laughter, and surprises follow you all season long.', sender: 'Jack', accent: '#70e000' },
-  { day: 24, title: 'Merry Christmas', message: 'You are sincerely wished the happiest holiday and a fresh start full of joy.', sender: 'Ella', accent: '#ff6b6b' }
+  { day: 1, title: 'Ein gemütlicher Morgen', message: 'Warmer Kakao, eine kuschelige Decke und ein Tag voller kleiner Wunder. Frohe Weihnachten!', sender: 'Mila', accent: '#ef6671' },
+  { day: 2, title: 'Schneetag', message: 'Möge jede Schneeflocke dich daran erinnern, dass Magie oft in den stillen Momenten steckt.', sender: 'Noah', accent: '#31aeb2' },
+  { day: 3, title: 'Sternenwünsche', message: 'Mögen deine Tage mit Freundlichkeit, Lachen und Liebe funkeln.', sender: 'Lina', accent: '#e9ad42' },
+  { day: 4, title: 'Lichterglanz', message: 'Ein Kerzenabend, ein warmes Herz und ein wunderschönes Weihnachtsfest für dich.', sender: 'Eli', accent: '#9670c8' },
+  { day: 5, title: 'Festliche Freude', message: 'Jedes Lächeln, das du verschenkst, findet seinen Weg zu dir zurück.', sender: 'Clara', accent: '#5cae78' },
+  { day: 6, title: 'Klingende Grüße', message: 'Möge die Musik dieser Zeit dein Zuhause mit Freude erfüllen.', sender: 'Theo', accent: '#e9ad42' },
+  { day: 7, title: 'Winterumarmung', message: 'Eine warme Umarmung und eine Tasche voller kuscheliger Erinnerungen für dich.', sender: 'Lucy', accent: '#31aeb2' },
+  { day: 8, title: 'Zuckerstangenzauber', message: 'Ich wünsche dir Weihnachten so süß wie ein Traum aus Zuckerstangen.', sender: 'Zoe', accent: '#ef6671' },
+  { day: 9, title: 'Sternenfunkeln', message: 'Mögen die Lichter dich daran erinnern, wie lieb du gehabt wirst.', sender: 'Owen', accent: '#31aeb2' },
+  { day: 10, title: 'Familienfreude', message: 'Mit dir wird jedes Zusammensein noch ein bisschen schöner.', sender: 'Ava', accent: '#9670c8' },
+  { day: 11, title: 'Weihnachtswunder', message: 'Möge dein Weihnachten so funkeln wie die Sterne über dem Schnee.', sender: 'Leo', accent: '#e9ad42' },
+  { day: 12, title: 'Merry Moments', message: 'Ein bisschen Lachen, ganz viel Liebe und jede Menge Weihnachtsfreude.', sender: 'Sofia', accent: '#31aeb2' },
+  { day: 13, title: 'Warme Wünsche', message: 'Möge jeder Winkel deines Tages von Frieden und Dankbarkeit leuchten.', sender: 'Isaac', accent: '#5cae78' },
+  { day: 14, title: 'Goldene Träume', message: 'Auf schöne Erinnerungen, fröhliche Abende und goldene Wintertage!', sender: 'Nora', accent: '#e9ad42' },
+  { day: 15, title: 'Gemeinsam ist es schön', message: 'Danke, dass du zu meinen liebsten Weihnachtsmomenten gehörst.', sender: 'Kai', accent: '#ef6671' },
+  { day: 16, title: 'Licht & Frieden', message: 'Möge dein Zuhause voller Licht, Lachen und Frieden sein.', sender: 'Emma', accent: '#31aeb2' },
+  { day: 17, title: 'Zauberstunde', message: 'Das schönste Geschenk ist die Wärme, die entsteht, wenn jemand an dich denkt.', sender: 'Finn', accent: '#e9ad42' },
+  { day: 18, title: 'Schneelächeln', message: 'Ich wünsche dir eine Zeit voller Geborgenheit und Freude.', sender: 'Ruby', accent: '#5cae78' },
+  { day: 19, title: 'Festliche Ruhe', message: 'Möge dein Herz ruhig, gemütlich und ganz friedlich sein.', sender: 'Hugo', accent: '#9670c8' },
+  { day: 20, title: 'Weihnachtsfunkeln', message: 'Deine Freundlichkeit ist das hellste Licht in jedem Raum.', sender: 'Ivy', accent: '#ef6671' },
+  { day: 21, title: 'Süße Weihnachtsgrüße', message: 'Möge dein Weihnachten süß, hell und wunderschön unvergesslich sein.', sender: 'Mason', accent: '#ef6671' },
+  { day: 22, title: 'Weihnachten wie im Märchen', message: 'Auf all die kleinen magischen Momente, die diese Zeit bereithält.', sender: 'Luna', accent: '#31aeb2' },
+  { day: 23, title: 'Überraschungsfreude', message: 'Mögen dich Liebe, Lachen und schöne Überraschungen begleiten.', sender: 'Jack', accent: '#5cae78' },
+  { day: 24, title: 'Frohe Weihnachten', message: 'Ich wünsche dir ein wunderschönes Fest und einen fröhlichen Start ins neue Jahr!', sender: 'Ella', accent: '#ef6671' },
 ];
 
-const scene = document.getElementById('scene');
-const composerPanel = document.getElementById('composerPanel');
-const newCardButton = document.getElementById('newCardButton');
-const closePanelButton = document.getElementById('closePanelButton');
-const cardForm = document.getElementById('cardForm');
-const colorPicker = document.getElementById('colorPicker');
-const senderNameInput = document.getElementById('senderName');
-const recipientNameInput = document.getElementById('recipientName');
-const messageInput = document.getElementById('cardMessage');
-const modal = document.getElementById('cardModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalMessage = document.getElementById('modalMessage');
-const modalSender = document.getElementById('modalSender');
-const modalDay = document.getElementById('modalDay');
-const closeModalButton = document.getElementById('closeModalButton');
-
+const $ = (selector) => document.querySelector(selector);
+const scene = $('#scene');
+const doorGrid = $('#doorGrid');
+const composerPanel = $('#composerPanel');
+const cardForm = $('#cardForm');
+const senderNameInput = $('#senderName');
+const recipientNameInput = $('#recipientName');
+const messageInput = $('#cardMessage');
+const modal = $('#cardModal');
 const STORAGE_KEY = 'advent-cards-v1';
-let selectedColor = '#ff5f6d';
+let selectedColor = '#ef6671';
 let doors = [];
-
-function generateDoorGrid() {
-  const doorGrid = document.createElement('div');
-  doorGrid.className = 'door-grid';
-  scene.appendChild(doorGrid);
-
-  for (let day = 1; day <= 24; day += 1) {
-    const card = doors.find((door) => door.day === day) || defaultCards[day - 1];
-
-    const doorButton = document.createElement('button');
-    doorButton.className = 'door';
-    doorButton.type = 'button';
-    doorButton.dataset.day = String(day);
-    doorButton.innerHTML = `
-      <div class="door-inner">
-        <div class="door-face door-cover">
-          <span class="door-number">${day}</span>
-          <span class="door-icon">🎄</span>
-        </div>
-        <div class="door-face door-back">
-          <div class="card-preview" style="--card-accent:${card.accent}">
-            <span class="mini-label">card</span>
-            <strong>${card.title}</strong>
-            <span>to ${card.sender}</span>
-          </div>
-        </div>
-      </div>
-    `;
-
-    doorButton.addEventListener('click', () => openDoor(day));
-    doorGrid.appendChild(doorButton);
-  }
-}
+let stars = Number(localStorage.getItem('winter-village-stars') || 0);
+let huntActive = false;
+let audioContext;
+let musicTimer;
+let noteIndex = 0;
 
 function loadDoors() {
-  const saved = localStorage.getItem(STORAGE_KEY);
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    doors = Array.isArray(saved) && saved.length ? saved : defaultCards.map((card) => ({ ...card }));
+  } catch {
+    doors = defaultCards.map((card) => ({ ...card }));
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(doors));
+}
 
-  if (saved) {
-    doors = JSON.parse(saved);
+function renderCalendar() {
+  doorGrid.replaceChildren();
+  for (let day = 1; day <= 24; day += 1) {
+    const card = doors.find((item) => item.day === day) || defaultCards[day - 1];
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'door';
+    button.style.setProperty('--card-accent', card.accent || '#ef6671');
+    button.setAttribute('aria-label', `Türchen ${day} öffnen: ${card.title}`);
+    button.innerHTML = `<span class="door-number">${String(day).padStart(2, '0')}</span><span class="door-glyph" aria-hidden="true">✦</span>`;
+    button.addEventListener('click', () => openCard(card, day));
+    doorGrid.append(button);
+  }
+}
+
+function openCard(card, day, title = card.title, message = card.message, sender = card.sender) {
+  $('#modalTitle').textContent = title || 'Frohe Weihnachten!';
+  $('#modalMessage').textContent = message || '';
+  $('#modalSender').textContent = sender || 'Ein Weihnachtswichtel';
+  $('#modalDay').textContent = day ? `Tag ${String(day).padStart(2, '0')}` : 'Eine Überraschung';
+  modal.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+  $('#closeModalButton').focus();
+}
+
+function closeModal() {
+  modal.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+}
+
+function saveStars(amount = 1) {
+  stars += amount;
+  localStorage.setItem('winter-village-stars', String(stars));
+  $('#starCount').textContent = String(stars);
+  sparkleAt(Math.random() * 80 + 10, Math.random() * 65 + 10);
+}
+
+function sparkleAt(x, y) {
+  const sparkle = document.createElement('span');
+  sparkle.className = 'sparkle';
+  sparkle.textContent = ['✦', '✧', '✨'][Math.floor(Math.random() * 3)];
+  sparkle.style.left = `${x}%`;
+  sparkle.style.top = `${y}%`;
+  $('#sparkleLayer').append(sparkle);
+  window.setTimeout(() => sparkle.remove(), 1100);
+}
+
+function makeSnow() {
+  const layer = $('#snowLayer');
+  for (let index = 0; index < 48; index += 1) {
+    const flake = document.createElement('i');
+    flake.className = 'snowflake';
+    flake.textContent = index % 4 === 0 ? '✳' : '•';
+    flake.style.left = `${Math.random() * 100}%`;
+    flake.style.animationDuration = `${7 + Math.random() * 10}s`;
+    flake.style.animationDelay = `${Math.random() * -15}s`;
+    flake.style.setProperty('--flake-size', `${5 + Math.random() * 10}px`);
+    layer.append(flake);
+  }
+}
+
+function showSanta() {
+  huntActive = false;
+  const santa = $('#santaButton');
+  santa.classList.remove('hidden');
+  santa.classList.add('santa-found');
+  $('#gameStatus').textContent = 'Gefunden! Klick den Weihnachtsmann für deine Botschaft.';
+  saveStars(2);
+  window.setTimeout(() => santa.classList.remove('santa-found'), 900);
+}
+
+function startMusic() {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContext) {
+    $('#gameStatus').textContent = 'Dein Browser unterstützt leider keine Web-Audio-Musik.';
     return;
   }
-
-  doors = defaultCards.map((card) => ({ ...card }));
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(doors));
+  audioContext = audioContext || new AudioContext();
+  audioContext.resume();
+  const notes = [523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46];
+  musicTimer = window.setInterval(() => {
+    const oscillator = audioContext.createOscillator();
+    const volume = audioContext.createGain();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = notes[noteIndex % notes.length];
+    volume.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    volume.gain.exponentialRampToValueAtTime(0.035, audioContext.currentTime + 0.03);
+    volume.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.34);
+    oscillator.connect(volume).connect(audioContext.destination);
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.36);
+    noteIndex += 1;
+  }, 390);
+  $('#musicButton').textContent = '♫ Musik an';
+  $('#musicButton').setAttribute('aria-pressed', 'true');
 }
 
-function persistDoors() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(doors));
+function stopMusic() {
+  window.clearInterval(musicTimer);
+  musicTimer = undefined;
+  $('#musicButton').textContent = '♫ Musik aus';
+  $('#musicButton').setAttribute('aria-pressed', 'false');
 }
 
-function openDoor(day) {
-  const card = doors.find((door) => door.day === day);
+$('#treeButton').addEventListener('click', () => {
+  scene.classList.toggle('tree-lit');
+  $('#gameStatus').textContent = scene.classList.contains('tree-lit') ? 'Der Wunschbaum leuchtet! Sammle seine Sterne.' : 'Der Wunschbaum schlummert. Klick ihn an, um ihn zu erleuchten.';
+  saveStars();
+});
 
-  if (!card) return;
+document.querySelectorAll('.ornament').forEach((ornament) => ornament.addEventListener('click', (event) => {
+  event.stopPropagation();
+  ornament.classList.toggle('ornament-lit');
+  saveStars();
+}));
 
-  modalTitle.textContent = card.title || `Dear ${card.recipient || 'friend'}`;
-  modalMessage.textContent = card.message;
-  modalSender.textContent = card.sender || 'Someone special';
-  modalDay.textContent = `Day ${String(day).padStart(2, '0')}`;
+document.querySelectorAll('.gift').forEach((gift) => gift.addEventListener('click', () => {
+  const surprise = gift.dataset.surprise;
+  gift.classList.add('gift-open');
+  $('#gameStatus').textContent = surprise;
+  openCard({}, null, 'Eine kleine Überraschung', surprise, 'Das Weihnachtsdorf');
+  saveStars();
+}));
 
-  modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
+document.querySelectorAll('.house-button').forEach((house) => house.addEventListener('click', () => {
+  openCard({}, null, 'Eine Geschichte aus dem Dorf', house.dataset.story, 'Das Weihnachtsdorf');
+  house.classList.add('house-visited');
+  saveStars();
+}));
 
-function addCardToDoor(event) {
-  event.preventDefault();
+$('#marketButton').addEventListener('click', () => {
+  openCard({}, null, 'Grüße vom Weihnachtsmarkt', 'Du hast einen Lebkuchenstern gewonnen! Er duftet nach Zimt und bringt dir einen Glücksstern. Frohe Weihnachten!', 'Die Marktleute');
+  saveStars(2);
+});
 
-  const sender = senderNameInput.value.trim() || 'Mia';
-  const recipient = recipientNameInput.value.trim() || 'Friends';
-  const message = messageInput.value.trim() || 'Seasonal joy to you.';
+$('#santaButton').addEventListener('click', () => {
+  $('#santaButton').classList.add('santa-wave');
+  window.setTimeout(() => $('#santaButton').classList.remove('santa-wave'), 850);
+  const name = recipientNameInput.value.trim() || 'du';
+  openCard({}, null, `Frohe Weihnachten, ${name}!`, 'Ho, ho, ho! Ich wünsche dir ein Fest voller Lachen, gemütlicher Augenblicke und funkelnder Überraschungen. Danke, dass du so viel Freude in die Welt bringst!', 'Der Weihnachtsmann');
+  saveStars();
+});
 
-  const emptyDoor = doors.find((door) => !door.customAdded && !door.isOpen);
-  const day = emptyDoor ? emptyDoor.day : 1;
+$('#sleighButton').addEventListener('click', () => {
+  const sleigh = $('#sleighButton');
+  sleigh.classList.remove('sleigh-flight');
+  void sleigh.offsetWidth;
+  sleigh.classList.add('sleigh-flight');
+  $('#gameStatus').textContent = 'Der Schlitten saust über den Himmel!';
+  saveStars();
+});
 
-  const card = {
-    day,
-    title: `For ${recipient}`,
-    message,
-    sender,
-    accent: selectedColor,
-    recipient,
-    customAdded: true,
-  };
+document.querySelectorAll('.snowman').forEach((snowman) => snowman.addEventListener('click', () => {
+  snowman.classList.toggle('snowman-wave');
+  $('#gameStatus').textContent = 'Schneemann entdeckt! Das Rätsel fragt: Wie viele sind im Dorf?';
+  saveStars();
+}));
 
-  const index = doors.findIndex((door) => door.day === day);
-  if (index >= 0) {
-    doors[index] = card;
+$('#huntButton').addEventListener('click', () => {
+  if ($('#santaButton').classList.contains('hidden')) {
+    huntActive = true;
+    $('#gameStatus').textContent = 'Der Weihnachtsmann versteckt sich hinter einem der Häuser. Tippe auf das richtige Haus!';
+    document.querySelectorAll('.house-button').forEach((house) => house.classList.add('hunt-clue'));
+    window.setTimeout(() => document.querySelectorAll('.house-button').forEach((house) => house.classList.remove('hunt-clue')), 1800);
   } else {
-    doors.push(card);
+    showSanta();
   }
+});
 
-  persistDoors();
-  refreshScene();
-  composerPanel.classList.add('hidden');
-  cardForm.reset();
-  senderNameInput.value = sender;
-  recipientNameInput.value = recipient;
-  messageInput.value = message;
-  openDoor(day);
-}
+document.querySelectorAll('.house-button').forEach((house) => house.addEventListener('click', () => {
+  if (huntActive) showSanta();
+}));
 
-function refreshScene() {
-  scene.innerHTML = '';
-  generateDoorGrid();
-}
+$('#countButton').addEventListener('click', () => {
+  $('#gameStatus').textContent = 'Im Dorf verstecken sich genau 3 Schneemänner. Klick einen an, um einen Stern zu sammeln!';
+  saveStars();
+});
 
-function initColorPicker() {
-  colorPicker.querySelectorAll('.color-swatch').forEach((swatch) => {
-    swatch.addEventListener('click', () => {
-      colorPicker.querySelectorAll('.color-swatch').forEach((item) => item.classList.remove('active'));
-      swatch.classList.add('active');
-      selectedColor = swatch.dataset.color;
-    });
-  });
-}
+$('#giftHuntButton').addEventListener('click', () => {
+  $('#gameStatus').textContent = 'Finde das blaue Geschenk im Schnee und klick es an!';
+  $('.gift-blue').classList.add('gift-hint');
+  window.setTimeout(() => $('.gift-blue').classList.remove('gift-hint'), 2400);
+});
 
-function toggleComposer() {
+$('#snowButton').addEventListener('click', (event) => {
+  const paused = scene.classList.toggle('snow-paused');
+  event.currentTarget.textContent = paused ? '❄️ Schnee aus' : '❄️ Schnee an';
+  event.currentTarget.setAttribute('aria-pressed', String(!paused));
+});
+
+$('#musicButton').addEventListener('click', () => musicTimer ? stopMusic() : startMusic());
+$('#newCardButton').addEventListener('click', () => {
   composerPanel.classList.toggle('hidden');
-}
-
-newCardButton.addEventListener('click', toggleComposer);
-closePanelButton.addEventListener('click', () => composerPanel.classList.add('hidden'));
-closeModalButton.addEventListener('click', () => {
-  modal.classList.add('hidden');
-  document.body.style.overflow = '';
+  if (!composerPanel.classList.contains('hidden')) senderNameInput.focus();
 });
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-});
-cardForm.addEventListener('submit', addCardToDoor);
+$('#closePanelButton').addEventListener('click', () => composerPanel.classList.add('hidden'));
+$('#closeModalButton').addEventListener('click', closeModal);
+modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { closeModal(); composerPanel.classList.add('hidden'); } });
 
+$('#greetingSelect').addEventListener('change', (event) => {
+  if (event.target.value) messageInput.value = event.target.value;
+  else messageInput.value = '';
+});
+
+document.querySelectorAll('.color-swatch').forEach((swatch) => swatch.addEventListener('click', () => {
+  document.querySelectorAll('.color-swatch').forEach((item) => item.classList.remove('active'));
+  swatch.classList.add('active');
+  selectedColor = swatch.dataset.color;
+}));
+
+cardForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const sender = senderNameInput.value.trim();
+  const recipient = recipientNameInput.value.trim();
+  const message = messageInput.value.trim();
+  const availableDay = defaultCards.find((card) => !doors.some((item) => item.day === card.day && item.customAdded));
+  const day = availableDay?.day || 1;
+  const card = { day, title: `Für ${recipient}`, message, sender, recipient, accent: selectedColor, customAdded: true };
+  const index = doors.findIndex((item) => item.day === day);
+  if (index >= 0) doors[index] = card;
+  else doors.push(card);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(doors));
+  renderCalendar();
+  composerPanel.classList.add('hidden');
+  openCard(card, day);
+  saveStars();
+});
+
+$('#starCount').textContent = String(stars);
 loadDoors();
-initColorPicker();
-refreshScene();
-
-senderNameInput.value = 'Mia';
-recipientNameInput.value = 'Leo';
-messageInput.value = 'May your Christmas be full of laughter, cozy nights, and endless joy.';
+renderCalendar();
+makeSnow();
