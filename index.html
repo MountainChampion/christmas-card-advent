@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Card Exchange</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="mini-badge">✦</div>
+          <div>
+            <p class="eyebrow">advent exchange</p>
+            <h1>Christmas Card Wonderland</h1>
+          </div>
+        </div>
+        <button id="newCardButton" class="primary-button">Send a card</button>
+      </header>
+
+      <main class="scene-wrap">
+        <div class="snow-glow"></div>
+        <div class="snow-sparkles"></div>
+        <div id="scene" class="scene" aria-label="Weihnachtslandschaft"></div>
+      </main>
+
+      <aside id="composerPanel" class="composer-panel hidden" aria-live="polite">
+        <div class="panel-header">
+          <h2>Send a Christmas Card</h2>
+          <button id="closePanelButton" class="icon-button" aria-label="Close">✕</button>
+        </div>
+
+        <form id="cardForm">
+          <label>
+            From
+            <input id="senderName" type="text" maxlength="20" value="Mia" required />
+          </label>
+
+          <label>
+            To
+            <input id="recipientName" type="text" maxlength="20" value="Leo" required />
+          </label>
+
+          <label>
+            Message
+            <textarea id="cardMessage" rows="4" maxlength="120" required>May your Christmas be full of laughter, cozy nights, and endless joy.</textarea>
+          </label>
+
+          <label>
+            Color
+            <div class="color-picker" id="colorPicker">
+              <button type="button" class="color-swatch active" data-color="#ff5f6d" style="background:#ff5f6d" aria-label="red"></button>
+              <button type="button" class="color-swatch" data-color="#22c1c3" style="background:#22c1c3" aria-label="teal"></button>
+              <button type="button" class="color-swatch" data-color="#ffd166" style="background:#ffd166" aria-label="yellow"></button>
+              <button type="button" class="color-swatch" data-color="#9b5de5" style="background:#9b5de5" aria-label="purple"></button>
+              <button type="button" class="color-swatch" data-color="#5ec576" style="background:#5ec576" aria-label="green"></button>
+            </div>
+          </label>
+
+          <button type="submit" class="submit-button">Send it</button>
+        </form>
+      </aside>
+    </div>
+
+    <div id="cardModal" class="card-modal hidden" aria-modal="true" role="dialog">
+      <div class="modal-card">
+        <button id="closeModalButton" class="modal-close" aria-label="Close">✕</button>
+        <div class="modal-top">
+          <span class="card-tag">Dear friend</span>
+          <span id="modalDay" class="card-day">Day 01</span>
+        </div>
+        <h3 id="modalTitle">To you</h3>
+        <p id="modalMessage"></p>
+        <div class="signature-row">
+          <span>with love</span>
+          <strong id="modalSender">Mia</strong>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
