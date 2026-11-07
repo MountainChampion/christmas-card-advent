@@ -1,42 +1,46 @@
 :root {
-  --sky: #dfeaf1;
-  --sky-deep: #c8d9ea;
-  --snow: #f6fbff;
-  --snow-shadow: #dff0f8;
-  --grass: #7fd1a0;
-  --grass-dark: #5aa96d;
-  --forest: #5d9d7d;
+  --sky: #edf6fb;
+  --sky-deep: #dfeaf6;
+  --snow: #fffdf9;
+  --snow-shadow: #e3edf7;
+  --grass: #90d7a3;
+  --grass-dark: #5ca76a;
+  --forest: #5d8871;
   --red: #ef5a52;
   --blue: #3fa2d9;
   --yellow: #f3c763;
   --orange: #f4a261;
-  --pink: #f6d5d5;
+  --pink: #f9d9d3;
   --purple: #b57ae7;
-  --shadow: rgba(26, 61, 80, 0.15);
-  --panel: rgba(255, 255, 255, 0.74);
-  --glass: rgba(255, 255, 255, 0.35);
-  --text: #1e2d3a;
-  --muted: #586d7d;
+  --shadow: rgba(30, 53, 72, 0.12);
+  --panel: rgba(255, 255, 255, 0.8);
+  --glass: rgba(255, 255, 255, 0.42);
+  --text: #203448;
+  --muted: #5d7286;
+  --warm: #ffefc8;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   min-height: 100%;
-  background: linear-gradient(180deg, #dfeaf1 0%, #cfe1ef 32%, #dfeaf1 100%);
+  background: linear-gradient(180deg, #f7f0e6 0%, #edf6fc 100%);
   font-family: "Baloo 2", sans-serif;
   color: var(--text);
 }
 
 body {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font: inherit;
 }
 
@@ -49,9 +53,9 @@ button {
   min-height: 100vh;
   overflow: hidden;
   background:
-    radial-gradient(circle at 20% 25%, rgba(255,255,255,0.9), transparent 28%),
-    radial-gradient(circle at 68% 18%, rgba(255,255,255,0.7), transparent 24%),
-    linear-gradient(180deg, #dfeaf1 0%, #d7e8f5 100%);
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.85), transparent 26%),
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,0.7), transparent 24%),
+    linear-gradient(180deg, #f7efe7 0%, #eaf5fb 36%, #edf6fb 100%);
 }
 
 .topbar {
@@ -60,7 +64,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 28px 12px;
+  gap: 1rem;
+  padding: 26px 34px 18px;
 }
 
 .brand-wrap {
@@ -70,77 +75,81 @@ button {
 }
 
 .mini-badge {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #fff5bb, #ffce4a 60%, #ffb703);
-  box-shadow: 0 8px 18px rgba(255, 187, 0, 0.28);
-  font-size: 1.4rem;
+  background: linear-gradient(135deg, #fff4b5 0%, #ffd966 42%, #ffbf47 100%);
+  box-shadow: 0 16px 30px rgba(255, 188, 65, 0.32);
+  font-size: 1.5rem;
 }
 
 .eyebrow {
   margin: 0;
   font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(1.7rem, 3vw, 3rem);
+  font-size: clamp(1.8rem, 3vw, 3.1rem);
   line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .primary-button,
 .submit-button {
   border: none;
   border-radius: 999px;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ea4f7d 100%);
+  background: linear-gradient(135deg, #ff7d74 0%, #ec5f8b 100%);
   color: white;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.02em;
-  padding: 0.9rem 1.4rem;
-  box-shadow: 0 12px 24px rgba(233, 97, 122, 0.28);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  padding: 0.95rem 1.6rem;
+  box-shadow: 0 12px 28px rgba(235, 100, 125, 0.28);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 
 .primary-button:hover,
 .submit-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(233, 97, 122, 0.35);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(235, 100, 125, 0.34);
+  filter: saturate(1.08);
 }
 
 .scene-wrap {
   position: relative;
   z-index: 1;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 120px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0 24px;
+  padding: 0 20px 26px;
 }
 
 .scene {
   position: relative;
-  width: min(100%, 1800px);
-  height: min(90vh, 900px);
-  border-radius: 28px 28px 0 0;
+  width: min(100%, 1680px);
+  height: min(88vh, 900px);
+  border-radius: 30px 30px 0 0;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.0)),
-    linear-gradient(180deg, var(--sky) 0%, #e7f2f8 50%, #dfeaf1 100%);
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.36), 0 18px 42px rgba(49, 90, 120, 0.12);
+    linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0)),
+    linear-gradient(180deg, #edf7fc 0%, #e6f0f9 42%, #edf7fc 100%);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.45),
+    0 24px 60px rgba(51, 91, 128, 0.12);
 }
 
 .scene::before {
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 18%;
-  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(204,232,244,0.85));
+  height: 22%;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(193, 218, 234, 0.8));
 }
 
 .scene::after {
@@ -149,10 +158,10 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 22%;
+  height: 24%;
   background:
-    radial-gradient(circle at 50% 8%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.12) 52%, transparent 70%),
-    linear-gradient(180deg, rgba(255,255,255,0), rgba(163,200,210,0.2));
+    radial-gradient(circle at 50% 15%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.18) 55%, transparent 72%),
+    linear-gradient(180deg, rgba(255,255,255,0), rgba(172, 205, 220, 0.24));
 }
 
 .snow-glow,
@@ -163,26 +172,26 @@ h1 {
 }
 
 .snow-glow {
-  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.55), transparent 52%);
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.6), transparent 48%);
   z-index: 0;
 }
 
 .snow-sparkles {
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.9) 0 1.5px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,0.7) 0 1px, transparent 2px);
+    radial-gradient(circle, rgba(255,255,255,0.95) 0 1.7px, transparent 2.2px),
+    radial-gradient(circle, rgba(255,255,255,0.7) 0 1.2px, transparent 2px);
   background-size: 120px 110px;
-  background-position: 0 0, 40px 70px;
-  opacity: 0.8;
+  background-position: 0 0, 38px 72px;
+  opacity: 0.82;
   z-index: 0;
 }
 
 .door-grid {
   position: absolute;
-  inset: 2% 2% 9% 2%;
+  inset: 4% 3% 10% 3%;
   display: grid;
-  grid-template-columns: repeat(8, minmax(80px, 1fr));
-  gap: 0.5rem 0.8rem;
+  grid-template-columns: repeat(8, minmax(78px, 1fr));
+  gap: 0.8rem 0.9rem;
   z-index: 2;
 }
 
@@ -190,11 +199,11 @@ h1 {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 110px;
+  min-height: 118px;
   border: none;
   padding: 0;
   background: transparent;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 .door-inner {
@@ -203,7 +212,7 @@ h1 {
   height: 100%;
   border-radius: 18px;
   transform-style: preserve-3d;
-  transition: transform 0.7s ease;
+  transition: transform 0.72s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .door.is-open .door-inner {
@@ -222,17 +231,17 @@ h1 {
 }
 
 .door-cover {
-  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
-  border: 3px solid rgba(255,255,255,0.75);
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.4), 0 10px 18px rgba(42,74,102,0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.78), rgba(255,255,255,0.3));
+  border: 3px solid rgba(255,255,255,0.72);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.35), 0 16px 22px rgba(42,74,102,0.08);
 }
 
 .door-cover::before {
   content: "";
   position: absolute;
-  inset: 12% 14% 12% 14%;
+  inset: 11% 13% 12% 13%;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.0));
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
 }
 
 .door-number {
@@ -240,15 +249,15 @@ h1 {
   top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255,255,255,0.85);
-  box-shadow: 0 8px 18px rgba(63, 116, 157, 0.14);
-  font-size: 1.15rem;
-  font-weight: 800;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 10px 18px rgba(63, 116, 157, 0.15);
+  font-size: 1.12rem;
+  font-weight: 900;
   color: var(--text);
 }
 
@@ -258,16 +267,16 @@ h1 {
   height: 58px;
   display: grid;
   place-items: center;
-  margin-top: 10px;
-  font-size: 2.3rem;
-  filter: drop-shadow(0 10px 16px rgba(29,72,100,0.12));
+  margin-top: 8px;
+  font-size: 2.4rem;
+  filter: drop-shadow(0 10px 18px rgba(29,72,100,0.12));
 }
 
 .door-back {
   background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.7));
   transform: rotateY(180deg);
   border: 2px solid rgba(76,101,127,0.08);
-  box-shadow: rgba(42,74,102,0.1) 0 18px 30px;
+  box-shadow: rgba(42,74,102,0.12) 0 18px 30px;
   overflow: hidden;
 }
 
@@ -275,7 +284,7 @@ h1 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
 }
 
 .card-preview {
@@ -285,49 +294,50 @@ h1 {
   height: calc(100% - 18px);
   margin: 9px;
   border-radius: 14px;
-  padding: 0.8rem 0.7rem;
+  padding: 0.8rem 0.75rem 0.7rem;
   background: var(--card-accent, #ff8892);
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.3);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.28);
 }
 
 .card-preview .mini-label {
   display: inline-flex;
   align-self: flex-start;
-  padding: 0.3rem 0.55rem;
+  padding: 0.28rem 0.6rem;
   border-radius: 999px;
   background: rgba(255,255,255,0.22);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .card-preview strong {
   font-size: 1rem;
-  line-height: 1.05;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 .card-preview span {
-  font-size: 0.75rem;
-  opacity: 0.95;
+  font-size: 0.73rem;
+  opacity: 0.96;
 }
 
 .composer-panel {
   position: absolute;
-  right: 24px;
-  top: 96px;
+  right: 28px;
+  top: 100px;
   width: min(380px, calc(100vw - 36px));
   z-index: 20;
   background: var(--panel);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.75);
-  border-radius: 24px;
-  box-shadow: 0 18px 34px rgba(28, 63, 84, 0.18);
-  padding: 1.1rem 1rem 1rem;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.78);
+  border-radius: 26px;
+  box-shadow: 0 22px 40px rgba(28, 63, 84, 0.18);
+  padding: 1.15rem 1rem 1rem;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -339,7 +349,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
 }
 
 .panel-header h2 {
@@ -355,20 +365,20 @@ h1 {
   border: none;
   background: rgba(25, 59, 78, 0.08);
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 #cardForm {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.85rem;
 }
 
 #cardForm label {
   display: grid;
   gap: 0.35rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 #cardForm input,
@@ -376,12 +386,13 @@ h1 {
   width: 100%;
   border: 1px solid rgba(82, 103, 125, 0.18);
   border-radius: 14px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.82);
   padding: 0.8rem 0.9rem;
   font-size: 0.95rem;
   color: var(--text);
   resize: vertical;
   outline: none;
+  box-shadow: inset 0 1px 1px rgba(49, 76, 94, 0.04);
 }
 
 #cardForm input:focus,
@@ -397,20 +408,20 @@ h1 {
 }
 
 .color-swatch {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 3px solid transparent;
-  box-shadow: 0 8px 15px rgba(53, 80, 102, 0.14);
+  box-shadow: 0 8px 18px rgba(53, 80, 102, 0.15);
 }
 
 .color-swatch.active {
-  border-color: rgba(25,41,58,0.7);
+  border-color: rgba(25,41,58,0.72);
 }
 
 .submit-button {
-  margin-top: 0.3rem;
-  font-size: 1.05rem;
+  margin-top: 0.35rem;
+  font-size: 1.04rem;
 }
 
 .card-modal {
@@ -419,7 +430,7 @@ h1 {
   z-index: 30;
   display: grid;
   place-items: center;
-  background: rgba(10, 25, 38, 0.42);
+  background: rgba(14, 27, 38, 0.36);
   backdrop-filter: blur(6px);
 }
 
@@ -427,10 +438,10 @@ h1 {
   position: relative;
   width: min(420px, calc(100vw - 36px));
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(254,243,207,0.95));
+  background: linear-gradient(135deg, rgba(255,255,255,0.99), rgba(254,243,214,0.96));
   padding: 1.1rem 1.2rem 1.1rem;
-  box-shadow: 0 28px 50px rgba(16, 45, 64, 0.22);
-  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: 0 30px 60px rgba(16, 45, 64, 0.22);
+  border: 2px solid rgba(255,255,255,0.72);
 }
 
 .modal-close {
@@ -451,10 +462,10 @@ h1 {
   align-items: center;
   background: rgba(255, 113, 118, 0.12);
   color: #d94a65;
-  font-weight: 700;
+  font-weight: 800;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -466,14 +477,15 @@ h1 {
 }
 
 .modal-card h3 {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
   line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .modal-card p {
   margin: 0 0 1rem;
-  font-size: 1.08rem;
+  font-size: 1.06rem;
   line-height: 1.6;
   color: var(--text);
   font-family: "Patrick Hand", cursive;
@@ -482,22 +494,23 @@ h1 {
 .signature-row {
   display: flex;
   justify-content: space-between;
+  gap: 0.75rem;
   align-items: center;
   border-top: 1px dashed rgba(38,68,89,0.2);
   padding-top: 0.9rem;
   color: var(--muted);
-  font-size: 0.96rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
 }
 
 .signature-row strong {
   color: #d94a65;
-  font-size: 1.05rem;
+  font-size: 1.04rem;
 }
 
 @media (max-width: 980px) {
   body {
-    overflow: auto;
+    overflow-x: hidden;
   }
 
   .scene {
@@ -511,7 +524,7 @@ h1 {
   .composer-panel {
     position: static;
     width: 100%;
-    margin: 0 auto 24px;
+    margin: 0 auto 22px;
   }
 
   .page-shell {
@@ -524,6 +537,7 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    padding: 22px 18px 12px;
   }
 
   .scene-wrap {
@@ -531,13 +545,13 @@ h1 {
   }
 
   .scene {
-    border-radius: 20px;
-    height: 650px;
+    border-radius: 22px;
+    height: 640px;
   }
 
   .door-grid {
     gap: 0.45rem;
-    grid-template-columns: repeat(4, minmax(70px, 1fr));
+    grid-template-columns: repeat(4, minmax(72px, 1fr));
   }
 
   .door {
