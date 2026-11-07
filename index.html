@@ -15,11 +15,11 @@
         <div class="brand-wrap">
           <div class="mini-badge">✦</div>
           <div>
-            <p class="eyebrow">advent exchange</p>
+            <p class="eyebrow">Adventskalender</p>
             <h1>Christmas Card Wonderland</h1>
           </div>
         </div>
-        <button id="newCardButton" class="primary-button">Send a card</button>
+        <button id="newCardButton" class="primary-button">Karte schreiben</button>
       </header>
 
       <main class="scene-wrap">
@@ -30,54 +30,54 @@
 
       <aside id="composerPanel" class="composer-panel hidden" aria-live="polite">
         <div class="panel-header">
-          <h2>Send a Christmas Card</h2>
-          <button id="closePanelButton" class="icon-button" aria-label="Close">✕</button>
+          <h2>Weihnachtskarte schreiben</h2>
+          <button id="closePanelButton" class="icon-button" aria-label="Schließen">✕</button>
         </div>
 
         <form id="cardForm">
           <label>
-            From
-            <input id="senderName" type="text" maxlength="20" value="Mia" required />
+            Absender
+            <input id="senderName" type="text" maxlength="20" placeholder="Dein Name" autocomplete="name" required />
           </label>
 
           <label>
-            To
-            <input id="recipientName" type="text" maxlength="20" value="Leo" required />
+            Empfänger
+            <input id="recipientName" type="text" maxlength="20" placeholder="An wen geht die Karte?" required />
           </label>
 
           <label>
-            Message
-            <textarea id="cardMessage" rows="4" maxlength="120" required>May your Christmas be full of laughter, cozy nights, and endless joy.</textarea>
+            Deine Nachricht
+            <textarea id="cardMessage" rows="4" maxlength="120" placeholder="Schreibe hier deine Weihnachtsgrüße …" required></textarea>
           </label>
 
           <label>
-            Color
+            Kartenfarbe auswählen
             <div class="color-picker" id="colorPicker">
-              <button type="button" class="color-swatch active" data-color="#ff5f6d" style="background:#ff5f6d" aria-label="red"></button>
-              <button type="button" class="color-swatch" data-color="#22c1c3" style="background:#22c1c3" aria-label="teal"></button>
-              <button type="button" class="color-swatch" data-color="#ffd166" style="background:#ffd166" aria-label="yellow"></button>
-              <button type="button" class="color-swatch" data-color="#9b5de5" style="background:#9b5de5" aria-label="purple"></button>
-              <button type="button" class="color-swatch" data-color="#5ec576" style="background:#5ec576" aria-label="green"></button>
+              <button type="button" class="color-swatch active" data-color="#ff5f6d" style="background:#ff5f6d" aria-label="Rot"></button>
+              <button type="button" class="color-swatch" data-color="#22c1c3" style="background:#22c1c3" aria-label="Türkis"></button>
+              <button type="button" class="color-swatch" data-color="#ffd166" style="background:#ffd166" aria-label="Gelb"></button>
+              <button type="button" class="color-swatch" data-color="#9b5de5" style="background:#9b5de5" aria-label="Lila"></button>
+              <button type="button" class="color-swatch" data-color="#5ec576" style="background:#5ec576" aria-label="Grün"></button>
             </div>
           </label>
 
-          <button type="submit" class="submit-button">Send it</button>
+          <button type="submit" class="submit-button">Karte verschicken</button>
         </form>
       </aside>
     </div>
 
     <div id="cardModal" class="card-modal hidden" aria-modal="true" role="dialog">
       <div class="modal-card">
-        <button id="closeModalButton" class="modal-close" aria-label="Close">✕</button>
+        <button id="closeModalButton" class="modal-close" aria-label="Schließen">✕</button>
         <div class="modal-top">
-          <span class="card-tag">Dear friend</span>
-          <span id="modalDay" class="card-day">Day 01</span>
+          <span class="card-tag">Für dich</span>
+          <span id="modalDay" class="card-day">Tag 01</span>
         </div>
-        <h3 id="modalTitle">To you</h3>
+        <h3 id="modalTitle">Für dich</h3>
         <p id="modalMessage"></p>
         <div class="signature-row">
-          <span>with love</span>
-          <strong id="modalSender">Mia</strong>
+          <span>Liebe Grüße von</span>
+          <strong id="modalSender"></strong>
         </div>
       </div>
     </div>
